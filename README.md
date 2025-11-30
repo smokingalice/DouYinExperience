@@ -25,7 +25,7 @@
 - 搜索功能:通过keyword搜索帖子。（参考文档最下方可拓展内容）
 
 ### 项目apk
-
+https://github.com/smokingalice/DouYinExperience/releases/download/v1.0.0/DouYinExperience.apk
 ### 功能展示视频
 
 ## 项目代码解析
