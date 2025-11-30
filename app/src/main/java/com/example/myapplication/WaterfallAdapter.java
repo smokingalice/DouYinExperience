@@ -55,7 +55,7 @@ public class WaterfallAdapter extends RecyclerView.Adapter<WaterfallAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        PostItem item = dataList.get(position);// 1. 根据位置拿出要显示的那条数据
+        PostItem item = dataList.get(position);// 根据位置拿出要显示的那条数据
         holder.tvTitle.setText(item.title);
         holder.tvUser.setText(item.userName);
         holder.tvLikeCount.setText(String.valueOf(item.likeCount));
