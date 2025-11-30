@@ -27,7 +27,7 @@
 ### 项目apk
 https://github.com/smokingalice/DouYinExperience/releases/download/v1.0.0/DouYinExperience.apk
 ### 功能展示视频
-
+https://www.bilibili.com/video/BV1DhSPBHEfU/?spm_id_from=333.1387.upload.video_card.click&vd_source=32a1e95314126e39c5a2d66d16deb409
 ## 项目代码解析
 
 这部分将详细介绍整个代码的结构和设计思路，以及在写代码的过程中进行的修改部分。
