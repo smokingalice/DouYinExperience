@@ -65,7 +65,7 @@ app/src/main
 	...
 ```
 ### ✨ 项目设计（重点创新我使用了红色标记）
-#### 配置文件 AndroidManifest.xml与SplashActivity
+#### 1、配置文件 AndroidManifest.xml与SplashActivity
 由于我设置了仿造抖音的启动页面，所以SplashActivity是整个项目的launcher启动界面，所以配置文件做出申请。
 ```java
  <activity
@@ -89,7 +89,7 @@ SplashActivity活动使用Handler().postDelayed实现延迟启动，具体代码
 
 ```
 如注释所说，Handler 是 Android 中用于线程间通信和消息发送的工具，他的方法postDelayed可以实现延迟通信，而在传入参数时使用了() -> {}这样的Lambda 表达式，这类表达式只在我学习python时出现过，而此次培训我在看课堂上实例项目时好奇为什么实际开发中用这种方式，参考ai给我的回答是java也有这种快速打包的方法，在安卓开发中常用，用来简化反复的类申请，于是我的后面的代码几乎都使用了Lambda 表达式。然后Intent就是最基础的显示跳转，跳转至登录界面。
-#### DatabaseHelper数据库设置以及LoginActivity登录部分
+#### 2、DatabaseHelper数据库设置以及LoginActivity登录部分
 由于本项目无法连接云端服务器，我通过 SQLite 本地数据库实现数据存储以及记录账号信息、点赞信息等等。我创建⼀个继承⾃ SQLiteOpenHelper 的类DatabaseHelper，onCreate 方法中，定义了三张核心数据表：
 ```java
  public void onCreate(SQLiteDatabase db) {
@@ -151,7 +151,7 @@ btnLogin.setOnClickListener(v -> {
 			...loginOrRegister
 ```
 xml界面也相对简洁，使用LinearLayout并用两个EditText组件记录输入和一个Button按钮控制即可。
-#### 帖子对象PostItem、实现瀑布流的适配器WaterfallAdapter以及每个帖子内容DetailActivity
+#### 3、帖子对象PostItem、实现瀑布流的适配器WaterfallAdapter以及每个帖子内容DetailActivity
 为了实现瀑布流呈现效果，我设置了一个基础的实体帖子对象PostItem，它能够将数据库表结构与Java对象相对应。其中设置了如id、likeCount、avatarUrl等等字段，avatarUrl字段用来生成模拟头像。生成头像时我使用了DiceBear这一个开源的头像生成库，只需要构造特定的url即可：
 ```java
  this.avatarUrl = "https://api.dicebear.com/7.x/avataaars/png?seed=" + userName;
@@ -204,7 +204,7 @@ Glide.with(context)
         .into(holder.ivCover);
 ```
 至于DetailActivity，就是一个基础的帖子细节展示界面，值得注意的是它接受了整个帖子对象（上文有提到）以及他也使用了缓存策略，使得进入该界面是不需要再加载图片，其布局文件就是放大版的帖子布局文件，这里不多赘述。
-#### 模拟后端接口仓库PostRepository
+#### 4、模拟后端接口仓库PostRepository
 在最开始我的项目本身是直接用MainActivity连接底层数据库，没有线程分离也没有异步设置，经过同学在群里的提问，我去网上查阅资料并通过ai了解到，现如今的真实客户端开发中都会在云服务器上有后端程序以及真实的网络接口，我只能在本地进行简单的模拟，这样更符合开发逻辑。于是我结合设计了PostRepository作为本项目架构中最核心的中间层，他既包含了的数据获取方法（访问数据库的工作）,也包含了具体实施过程,例如是直接查库，还是先造数据再查,同时他也包含了模拟网络延迟的功能。我的整个结构图如下：
 ```java
 │   [ 1. 前端界面 (MainActivity) ]        │
@@ -243,7 +243,7 @@ public interface Callback<T> {
     }
 ```
 通过这样的设计，MainActivity不需要知道DatabaseHelper的存在，也不需要知道SQL怎么写。它只需要找 Repository要数据即可，这符合实际开发。
-#### 主控制活动MainActivity
+#### 5、主控制活动MainActivity
 主活动MainActivity其实主要负责整个UI的逻辑，首先是整体分为两个板块，经验板块和个人主页板块，第一个问题就是这两者的切换。首先我设计了底部按钮，用BottomNavigationView定义按钮布局，然后关联到文件menu/bottom_nav_menu.xml设置按钮图片：
 ```java
  <com.google.android.material.bottomnavigation.BottomNavigationView
