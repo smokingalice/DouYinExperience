@@ -64,7 +64,7 @@ app/src/main
 	└── drawable
 	...
 ```
-### 二、项目设计（本来想用红色标记重点，但发现全都很重要）
+### 二、项目设计（本来想用红色标记重点，但写着写着发现全都很重要）
 #### 1、配置文件 AndroidManifest.xml与SplashActivity
 由于我设置了仿造抖音的启动页面，所以SplashActivity是整个项目的launcher启动界面，所以配置文件做出申请。
 ```java
