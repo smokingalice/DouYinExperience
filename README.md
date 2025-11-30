@@ -24,9 +24,9 @@
 3、可扩展功能（时间关系因为有bug并未实装）
 - 搜索功能:通过keyword搜索帖子。（参考文档最下方可拓展内容）
 
-### 项目apk
+### 📱 项目apk
 https://github.com/smokingalice/DouYinExperience/releases/download/v1.0.0/DouYinExperience.apk
-### 功能展示视频
+### 📺 功能展示视频
 https://www.bilibili.com/video/BV1DhSPBHEfU/?spm_id_from=333.1387.upload.video_card.click&vd_source=32a1e95314126e39c5a2d66d16deb409
 ## 项目代码解析
 
