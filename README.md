@@ -1,7 +1,7 @@
 # 仿抖音经验app
 
 ## 项目成品展示
-###  ⚡已实现项目功能
+###  一、已实现项目功能
 1、**要求必备功能**
 - **瀑布流**: 采用双列瀑布流展示内容，图片根据原始比例自适应高度。
 - **完整的经验卡片**: 图片、标题、用户头像、用户名、点赞数等核心元素全部具备
@@ -24,14 +24,14 @@
 3、可扩展功能（时间关系因为有bug并未实装）
 - 搜索功能:通过keyword搜索帖子。（参考文档最下方可拓展内容）
 
-### 📱 项目apk
+### 二、项目apk
 https://github.com/smokingalice/DouYinExperience/releases/download/v1.0.0/DouYinExperience.apk
-### 📺 功能展示视频
+### 三、功能展示视频
 https://www.bilibili.com/video/BV1DhSPBHEfU/?spm_id_from=333.1387.upload.video_card.click&vd_source=32a1e95314126e39c5a2d66d16deb409
 ## 项目代码解析
 
 这部分将详细介绍整个代码的结构和设计思路，以及在写代码的过程中进行的修改部分。
-### 📂 项目代码结构
+### 一、项目代码结构
 针对整个项目结构我最初进行了分包设计，即分成ui.activity、adapters、data等等。但是由于项目结构单一且涉及的页面相对不多，同时在处理前后端数据交互时采用了模拟后端以及接口的形式并没有真正访问云服务器所以最终选择了都放置在同一个目录下方便修改。
 ```java
 app/src/main
@@ -64,7 +64,7 @@ app/src/main
 	└── drawable
 	...
 ```
-### ✨ 项目设计（重点创新我使用了红色标记）
+### 二、项目设计
 #### 1、配置文件 AndroidManifest.xml与SplashActivity
 由于我设置了仿造抖音的启动页面，所以SplashActivity是整个项目的launcher启动界面，所以配置文件做出申请。
 ```java
